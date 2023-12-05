@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "AutoBean - Membean Robot",
+    "version": "1.0.0",
+    "description": "An Auto-Membean Bot",
+    "homepage_url": "https://github.com/redyetidev/autobean",
+    "author": "RedYetiDev",
+    "icons": {
+        "16": "icons/icon16.png",
+        "19": "icons/icon19.png",
+        "32": "icons/icon32.png",
+        "38": "icons/icon38.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "19": "icons/icon19.png",
+            "32": "icons/icon32.png",
+            "38": "icons/icon38.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "js": ["background.js", "bootstrap.bundle.min.js"],
+            "matches": ["*://membean.com/training_sessions/*/user_state"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "index.html",
+                "bootstrap-ns.min.css",
+                "styles.css",
+                "inject.js"
+            ],
+            "matches": ["*://membean.com/*"]
+        }
+    ]
+}

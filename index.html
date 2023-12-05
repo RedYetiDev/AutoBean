@@ -1,0 +1,115 @@
+<!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+<!-- <script src="bootstrap.bundle.min.js"></script> -->
+<!-- <link src="styles.css" rel="stylesheet"> -->
+<div class="twbs">
+    <div class="twbs offcanvas offcanvas-start" tabindex="-1" id="settingsSidebar"
+        aria-labelledby="settingsSidebarLabel">
+        <div class="twbs offcanvas-header">
+            <h5 class="twbs offcanvas-title" id="settingsSidebarLabel">Bot Settings</h5>
+            <button type="button" class="twbs btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="twbs offcanvas-body">
+            <div>
+                <div class="twbs mt-3">
+                    <label for="target-accuracy">Target Accuracy (<span id="accuracy-value">50</span>%)</label>
+                    <input type="range" class="twbs form-range" id="target-accuracy" min="0" max="100">
+                </div>
+                <div class="mt-3">
+                    <label for="wait-time">Time To Wait On New Words (<span id="wait-time-value">50</span> seconds)</label>
+                    <input type="range" class="twbs form-range" id="wait-time" min="0" max="360">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Bot Status sidebar -->
+        <div class="twbs offcanvas offcanvas-start" tabindex="-1" id="statusSidebar"
+            aria-labelledby="statusSidebarLabel">
+            <div class="twbs offcanvas-header">
+                <h5 class="twbs offcanvas-title" id="statusSidebarLabel">Bot Status</h5>
+                <button type="button" class="twbs btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="twbs offcanvas-body">
+                <div>
+                    <!-- Answering Next Question In: X seconds (countdown) -->
+                    <!-- or: Skipping Next Question -->
+                    <!-- Override Radio "Skip" / "Answer" -->
+                    <p id="answering" class="twbs invisible">Answering Next Question In: <span
+                            id="countdown-answer">0</span> seconds</p>
+                    <p id="skipping" class="twbs invisible">Skipping Next Question</p>
+
+                    <!-- Overrides: Answer Now / Skip Question -->
+                    <div class="twbs btn-group btn-block w-100" role="group"
+                        aria-label="Basic radio toggle button group">
+                        <button type="button" class="twbs btn btn-danger" id="skip-button" autocomplete="off">Skip
+                            Question</button>
+                        <button type="button" class="twbs btn btn-warning" id="answer-button" autocomplete="off">Answer
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bot Credits sidebar -->
+        <div class="twbs offcanvas offcanvas-start" tabindex="-1" id="creditsSidebar"
+            aria-labelledby="creditsSidebarLabel">
+            <div class="twbs offcanvas-header">
+                <h5 class="twbs offcanvas-title" id="creditsSidebarLabel">Bot Credits</h5>
+                <button type="button" class="twbs btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="twbs offcanvas-body">
+                <div>
+                    <p>Version: <b>1.0</b></p>
+                    <p>Created by <a href="https://github.com/RedYetiDev"><b>RedYetiDev</b></a></p>
+                    <p>Inspired by <a href="https://github.com/Jurassic001/Auto-Bean"><b>Jurassic001/Auto-Bean</b></a></p>
+                    <p class="twbs text-secondary">Visit the <a href="https://github.com/RedYetiDev/AutoBean"><b>GitHub</b></a> repository for more
+                        information.
+                </div>
+            </div>
+        </div>
+
+        <!-- Log sidebar -->
+        <div class="twbs offcanvas offcanvas-start" tabindex="-1" id="logSidebar" aria-labelledby="logSidebarLabel">
+            <div class="twbs offcanvas-header">
+                <h5 class="twbs offcanvas-title" id="logSidebarLabel">Log</h5>
+                <button type="button" class="twbs btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="twbs offcanvas-body">
+                <textarea class="twbs form-control monospace" rows="10" readonly id="logtext"></textarea>
+                <!-- clear log button -->
+                <button class="twbs btn btn-danger mt-3" id="clear-log">Clear Log</button>
+            </div>
+        </div>
+
+        <!-- enable bot button -->
+        <button class="twbs btn btn-warning expand-button top-35 shadow-lg" type="button" id="enable-bot-button">
+            <span id="enable-bot-label">Enable</span> Bot
+        </button>
+
+        <!-- Settings Gear -->
+        <button class="twbs btn btn-primary expand-button top-45 shadow-lg" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#settingsSidebar" aria-controls="settingsSidebar" id="toggle-settings">
+            <i class="fas fa-cog"></i>
+        </button>
+
+        <!-- Bot Status Tab -->
+        <button class="twbs btn btn-danger expand-button top-55 shadow-lg" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#statusSidebar" aria-controls="statusSidebar">
+            <i class="fas fa-circle-info"></i>
+        </button>
+
+        <!-- Bot Credits Tab -->
+        <button class="btn btn-success expand-button top-65 shadow-lg" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#creditsSidebar" aria-controls="creditsSidebar">
+            <i class="fas fa-at"></i>
+        </button>
+
+        <!-- Log Tab -->
+        <button class="btn btn-secondary expand-button top-75" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#logSidebar" aria-controls="logSidebar">
+            <i class="fas fa-file-alt"></i>
+        </button>
+
+        <!-- <script src="index.js"></script> -->
+
+    </div>
